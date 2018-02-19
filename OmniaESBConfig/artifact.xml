@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="PriceListInboundEndpoint_NL" groupId="com.zamro.wso2.omnia.inbound-endpoint" version="1.0.0" type="synapse/inbound-endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/inbound-endpoints/PriceListInboundEndpoint_NL.xml</file>
+    </artifact>
+    <artifact name="PriceListInboundEndpoint_BE" groupId="com.zamro.wso2.omnia.inbound-endpoint" version="1.0.0" type="synapse/inbound-endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/inbound-endpoints/PriceListInboundEndpoint_BE.xml</file>
+    </artifact>
+    <artifact name="PriceListInboundEndpoint_DE" groupId="com.zamro.wso2.omnia.inbound-endpoint" version="1.0.0" type="synapse/inbound-endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/inbound-endpoints/PriceListInboundEndpoint_DE.xml</file>
+    </artifact>
+    <artifact name="PriceListImportSequence_NL" groupId="com.zamro.wso2.omnia.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/PriceListImportSequence_NL.xml</file>
+    </artifact>
+    <artifact name="PriceListImportSequence_DE" groupId="com.zamro.wso2.omnia.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/PriceListImportSequence_DE.xml</file>
+    </artifact>
+    <artifact name="PriceListImportSequence_BE" groupId="com.zamro.wso2.omnia.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/PriceListImportSequence_BE.xml</file>
+    </artifact>
+    <artifact name="smooks-pricelist-config_BE" groupId="com.zamro.wso2.omnia.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/smooks-pricelist-config_BE.xml</file>
+    </artifact>
+    <artifact name="smooks-pricelist-config_DE" groupId="com.zamro.wso2.omnia.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/smooks-pricelist-config_DE.xml</file>
+    </artifact>
+    <artifact name="smooks-pricelist-config_NL" groupId="com.zamro.wso2.omnia.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/smooks-pricelist-config_NL.xml</file>
+    </artifact>
+    <artifact name="TierPriceListInboundEndpoint_NL" groupId="com.zamro.wso2.omnia.inbound-endpoint" version="1.0.0" type="synapse/inbound-endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/inbound-endpoints/TierPriceListInboundEndpoint_NL.xml</file>
+    </artifact>
+    <artifact name="TierPriceListInboundEndpoint_BE" groupId="com.zamro.wso2.omnia.inbound-endpoint" version="1.0.0" type="synapse/inbound-endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/inbound-endpoints/TierPriceListInboundEndpoint_BE.xml</file>
+    </artifact>
+    <artifact name="TierPriceListInboundEndpoint_DE" groupId="com.zamro.wso2.omnia.inbound-endpoint" version="1.0.0" type="synapse/inbound-endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/inbound-endpoints/TierPriceListInboundEndpoint_DE.xml</file>
+    </artifact>
+    <artifact name="TierPriceListImportSequence_NL" groupId="com.zamro.wso2.omnia.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/TierPriceListImportSequence_NL.xml</file>
+    </artifact>
+    <artifact name="TierPriceListImportSequence_DE" groupId="com.zamro.wso2.omnia.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/TierPriceListImportSequence_DE.xml</file>
+    </artifact>
+    <artifact name="TierPriceListImportSequence_BE" groupId="com.zamro.wso2.omnia.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/TierPriceListImportSequence_BE.xml</file>
+    </artifact>
+    <artifact name="smooks-tier-pricelist-config_BE" groupId="com.zamro.wso2.omnia.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/smooks-tier-pricelist-config_BE.xml</file>
+    </artifact>
+    <artifact name="smooks-tier-pricelist-config_DE" groupId="com.zamro.wso2.omnia.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/smooks-tier-pricelist-config_DE.xml</file>
+    </artifact>
+    <artifact name="smooks-tier-pricelist-config_NL" groupId="com.zamro.wso2.omnia.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/smooks-tier-pricelist-config_NL.xml</file>
+    </artifact>
+    <artifact name="SendMailNotification" groupId="com.zamro.wso2.omnia.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/SendMailNotification.xml</file>
+    </artifact>
+    <artifact name="NotificationMailAddresses" groupId="com.zamro.wso2.omnia.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/NotificationMailAddresses.xml</file>
+    </artifact>
+    <artifact name="NotificationMailTemplate" groupId="com.zamro.wso2.omnia.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/NotificationMailTemplate.xml</file>
+    </artifact>
+    <artifact name="PriceListImportFault" groupId="com.zamro.wso2.omnia.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/PriceListImportFault.xml</file>
+    </artifact>
+</artifacts>

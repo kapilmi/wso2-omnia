@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<localEntry key="smooks-pricelist-config_NL" xmlns="http://ws.apache.org/ns/synapse">
+  <smooks-resource-list xmlns="http://www.milyn.org/xsd/smooks-1.1.xsd"
+    xmlns:core="http://www.milyn.org/xsd/smooks/smooks-core-1.3.xsd"
+    xmlns:file="http://www.milyn.org/xsd/smooks/file-routing-1.1.xsd"
+    xmlns:ftl="http://www.milyn.org/xsd/smooks/freemarker-1.1.xsd" xmlns:jb="http://www.milyn.org/xsd/smooks/javabean-1.2.xsd">
+    <core:filterSettings defaultSerialization="false" type="SAX"/>
+    <resource-config selector="Products,Product">
+      <resource>org.milyn.delivery.DomModelCreator</resource>
+    </resource-config>
+    <ftl:freemarker applyOnElement="Products">
+      <ftl:template>
+        <!--<enfinity branch="enterprise" build="1.0.0.0.15.7.6.2"
+        family="enfinity" major="6" minor="1"
+        xmlns="http://www.intershop.com/xml/ns/enfinity/7.1/bc_pricing/impex"
+        xmlns:dt="http://www.intershop.com/xml/ns/enfinity/6.5/core/impex-dt"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.intershop.com/xml/ns/enfinity/7.1/bc_pricing/impex bc_pricing.xsd">
+        <product-price-list id="OmniaPriceList" priceType="ZMR_ListPrice">
+          <display-name>Omnia Price List</display-name>
+          <description>Omnia suggested price list</description>
+          <enabled>true</enabled>
+          <priority>1</priority>
+          <target-groups>
+            <customer-segments>
+              <customer-segment id="Everyone" repository-id="Zamro-ZamroNL-Anonymous"/>
+            </customer-segments>
+          </target-groups>
+	      <?TEMPLATE-SPLIT-PI?>
+     </product-price-list>
+      </enfinity>-->
+      </ftl:template>
+    </ftl:freemarker>
+    <ftl:freemarker applyOnElement="Product">
+      <ftl:template>
+        <!--<product-price-list-entry sku='${.vars["Product"].ZamroID}'>
+        		<price-scale-table type-code='1' currency='EUR'>
+	         		<price-scale-entries>
+	           			<fixed-price-entry quantity='${.vars["Product"].quantity}' unit=''>
+	           				<value>${.vars["Product"].Price}</value>
+	           			</fixed-price-entry>
+	           		</price-scale-entries>
+	              </price-scale-table>
+            </product-price-list-entry>-->
+      </ftl:template>
+    </ftl:freemarker>
+  </smooks-resource-list>
+</localEntry>

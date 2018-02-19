@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="TierPriceListImportSequence_NL" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+  <smooks config-key="smooks-tier-pricelist-config_NL">
+    <input type="xml"/>
+    <output type="xml"/>
+  </smooks>
+  <property name="OUT_ONLY" scope="default" type="STRING" value="true"/>
+  <property expression="$trp:FILE_NAME" name="filename" scope="default" type="STRING"/>
+  <property
+    expression="concat('pricelist_',get-property('SYSTEM_DATE', 'yyyyMMddHHmmss'),$trp:FILE_NAME)"
+    name="transport.vfs.ReplyFileName" scope="transport" type="STRING"/>
+  <property action="remove" name="ClientApiNonBlocking" scope="axis2"/>
+  <send>
+    <endpoint name="ICMPriceListEP">
+      <address trace="disable" uri="vfs:sftp://omnia-ACC:lIpW2lRV9QjT@37.97.184.105:22/filedrop/ish_pricelists/Zamro-ZamroNL/"/>
+    </endpoint>
+  </send>
+</sequence>
