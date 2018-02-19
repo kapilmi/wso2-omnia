@@ -10,5 +10,9 @@
     expression="concat('pricelist_',get-property('SYSTEM_DATE', 'yyyyMMddHHmmss'),$trp:FILE_NAME)"
     name="transport.vfs.ReplyFileName" scope="transport" type="STRING"/>
   <property action="remove" name="ClientApiNonBlocking" scope="axis2"/>
-  <send/>
+  <send>
+    <endpoint name="ICMPriceListEP">
+      <address trace="disable" uri="vfs:sftp://omnia-ACC:lIpW2lRV9QjT@37.97.184.105:22/filedrop/ish_pricelists/Zamro-ZamroDE/"/>
+    </endpoint>
+  </send>
 </sequence>
