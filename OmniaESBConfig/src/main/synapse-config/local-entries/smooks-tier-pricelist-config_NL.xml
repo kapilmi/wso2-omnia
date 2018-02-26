@@ -15,10 +15,10 @@
         xmlns="http://www.intershop.com/xml/ns/enfinity/7.1/bc_pricing/impex"
         xmlns:dt="http://www.intershop.com/xml/ns/enfinity/6.5/core/impex-dt"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.intershop.com/xml/ns/enfinity/7.1/bc_pricing/impex bc_pricing.xsd">
-       <product-price-list id="OmniaTierPriceList" priceType="ZMR_ListPrice">
+      	<product-price-list id="OmniaTierPriceList" priceType="ZMR_ListPrice">
           <display-name>Omnia Tier Price List</display-name>
           <description>Omnia suggested Tier price list</description>
-          <enabled>false</enabled>
+          <enabled>true</enabled>
           <priority>1</priority>
           <target-groups>
             <customer-segments>

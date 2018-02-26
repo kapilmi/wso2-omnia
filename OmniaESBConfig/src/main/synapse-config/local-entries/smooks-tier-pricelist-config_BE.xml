@@ -18,7 +18,7 @@
         <product-price-list id="OmniaTierPriceList" priceType="ZMR_ListPrice">
           <display-name>Omnia Tier Price List</display-name>
           <description>Omnia suggested Tier price list</description>
-          <enabled>false</enabled>
+          <enabled>true</enabled>
           <priority>1</priority>
           <target-groups>
             <customer-segments>
