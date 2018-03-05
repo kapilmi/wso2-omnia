@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <inboundEndpoint name="TierPriceListInboundEndpoint_BE" protocol="file"
-  suspend="false" xmlns="http://ws.apache.org/ns/synapse">
+  sequence="TierPriceListImportSequence_BE" suspend="false" xmlns="http://ws.apache.org/ns/synapse">
   <parameters>
     <parameter name="interval">60</parameter>
     <parameter name="sequential">true</parameter>
