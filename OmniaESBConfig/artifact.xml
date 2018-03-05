@@ -53,14 +53,32 @@
     <artifact name="smooks-tier-pricelist-config_NL" groupId="com.zamro.wso2.omnia.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
         <file>src/main/synapse-config/local-entries/smooks-tier-pricelist-config_NL.xml</file>
     </artifact>
-    <artifact name="SendMailNotification" groupId="com.zamro.wso2.omnia.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
-        <file>src/main/synapse-config/sequences/SendMailNotification.xml</file>
+  <artifact name="PromotionPriceListInboundEndpoint_NL" groupId="com.zamro.wso2.omnia.inbound-endpoint" version="1.0.0" type="synapse/inbound-endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/inbound-endpoints/PromotionPriceListInboundEndpoint_NL.xml</file>
     </artifact>
-    <artifact name="NotificationMailAddresses" groupId="com.zamro.wso2.omnia.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
-        <file>src/main/synapse-config/local-entries/NotificationMailAddresses.xml</file>
+    <artifact name="PromotionPriceListInboundEndpoint_BE" groupId="com.zamro.wso2.omnia.inbound-endpoint" version="1.0.0" type="synapse/inbound-endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/inbound-endpoints/PromotionPriceListInboundEndpoint_BE.xml</file>
     </artifact>
-    <artifact name="NotificationMailTemplate" groupId="com.zamro.wso2.omnia.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
-        <file>src/main/synapse-config/local-entries/NotificationMailTemplate.xml</file>
+    <artifact name="PromotionPriceListInboundEndpoint_DE" groupId="com.zamro.wso2.omnia.inbound-endpoint" version="1.0.0" type="synapse/inbound-endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/inbound-endpoints/PromotionPriceListInboundEndpoint_DE.xml</file>
+    </artifact>
+    <artifact name="PromotionPriceListImportSequence_NL" groupId="com.zamro.wso2.omnia.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/PromotionPriceListImportSequence_NL.xml</file>
+    </artifact>
+    <artifact name="PromotionPriceListImportSequence_DE" groupId="com.zamro.wso2.omnia.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/PromotionPriceListImportSequence_DE.xml</file>
+    </artifact>
+    <artifact name="PromotionPriceListImportSequence_BE" groupId="com.zamro.wso2.omnia.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/PromotionPriceListImportSequence_BE.xml</file>
+    </artifact>
+    <artifact name="smooks-promotion-pricelist-config_BE" groupId="com.zamro.wso2.omnia.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/smooks-promotion-pricelist-config_BE.xml</file>
+    </artifact>
+    <artifact name="smooks-promotion-pricelist-config_DE" groupId="com.zamro.wso2.omnia.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/smooks-promotion-pricelist-config_DE.xml</file>
+    </artifact>
+    <artifact name="smooks-promotion-pricelist-config_NL" groupId="com.zamro.wso2.omnia.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/smooks-promotion-pricelist-config_NL.xml</file>
     </artifact>
     <artifact name="PriceListImportFault" groupId="com.zamro.wso2.omnia.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
         <file>src/main/synapse-config/sequences/PriceListImportFault.xml</file>
