@@ -20,7 +20,9 @@
           <description>Omnia suggested Promotion price list</description>
           <enabled>true</enabled>
           <priority>1</priority>
-          <target-groups>
+          <valid-from/>
+		  <valid-to/>
+		  <target-groups>
             <customer-segments>
               <customer-segment id="Everyone" repository-id="Zamro-ZamroDE-Anonymous"/>
             </customer-segments>

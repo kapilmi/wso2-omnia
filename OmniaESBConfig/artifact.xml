@@ -53,7 +53,7 @@
     <artifact name="smooks-tier-pricelist-config_NL" groupId="com.zamro.wso2.omnia.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
         <file>src/main/synapse-config/local-entries/smooks-tier-pricelist-config_NL.xml</file>
     </artifact>
-  <artifact name="PromotionPriceListInboundEndpoint_NL" groupId="com.zamro.wso2.omnia.inbound-endpoint" version="1.0.0" type="synapse/inbound-endpoint" serverRole="EnterpriseServiceBus">
+    <artifact name="PromotionPriceListInboundEndpoint_NL" groupId="com.zamro.wso2.omnia.inbound-endpoint" version="1.0.0" type="synapse/inbound-endpoint" serverRole="EnterpriseServiceBus">
         <file>src/main/synapse-config/inbound-endpoints/PromotionPriceListInboundEndpoint_NL.xml</file>
     </artifact>
     <artifact name="PromotionPriceListInboundEndpoint_BE" groupId="com.zamro.wso2.omnia.inbound-endpoint" version="1.0.0" type="synapse/inbound-endpoint" serverRole="EnterpriseServiceBus">

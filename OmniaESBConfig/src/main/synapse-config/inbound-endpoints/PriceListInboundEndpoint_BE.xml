@@ -3,7 +3,7 @@
   onError="PriceListImportFault" protocol="file"
   sequence="PriceListImportSequence_BE" suspend="false" xmlns="http://ws.apache.org/ns/synapse">
   <parameters>
-    <parameter name="interval">120000</parameter>
+    <parameter name="interval">60000</parameter>
     <parameter name="sequential">true</parameter>
     <parameter name="coordination">true</parameter>
     <parameter name="transport.vfs.ContentType">application/xml</parameter>

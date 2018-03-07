@@ -1,10 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sequence name="PromotionPriceListImportSequence_BE" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
-  <smooks config-key="smooks-promotion-pricelist-config_BE">
-    <input type="xml"/>
-    <output type="xml"/>
-  </smooks>
-  <property name="OUT_ONLY" scope="default" type="STRING" value="true"/>
+ 	 <property name="campaignName"  expression="//Products/Product[1]/campaign_name/text()"/>
+      <property name="validFrom"  expression="//Products/Product[1]/start_date/text()" />
+      <property name="validTo"  expression="//Products/Product[1]/end_date/text()"/>
+		
+	  <property expression="fn:concat('OmniaPromotionPriceList_',$ctx:campaignName)" name="priceListID" />
+	  <property expression="fn:concat('Omnia Promotion Price List for Campaign ',get-property('campaignName'))" name="displayName" />
+	  <property expression="fn:concat('Omnia suggested Promotion price list for Campaign ',get-property('campaignName'))" name="description"/>
+	
+	
+	  <smooks config-key="smooks-promotion-pricelist-config_DE">
+	    	<input type="xml"/>
+	    	<output type="xml"/>
+	</smooks>	
+	<enrich>
+		   <source xpath="$ctx:priceListID"/> 
+	    	<target xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+	                        xmlns:impex="http://www.intershop.com/xml/ns/enfinity/7.1/bc_pricing/impex"
+	                        action="replace" type="custom" xpath="//soapenv:Body/impex:enfinity/impex:product-price-list/@id"/> 
+	</enrich>
+	<enrich>
+		   <source xpath="$ctx:validFrom"/> 
+	       <target xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+	                        xmlns:impex="http://www.intershop.com/xml/ns/enfinity/7.1/bc_pricing/impex"
+	                        action="replace" type="custom" xpath="//soapenv:Body/impex:enfinity/impex:product-price-list/impex:valid-from"/> 
+	</enrich>
+	<enrich>
+		   <source xpath="$ctx:validTo"/> 
+	    	<target xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+	                        xmlns:impex="http://www.intershop.com/xml/ns/enfinity/7.1/bc_pricing/impex"
+	                        action="replace" type="custom" xpath="//soapenv:Body/impex:enfinity/impex:product-price-list/impex:valid-to"/> 
+	</enrich>
+	<enrich>
+		   <source xpath="$ctx:displayName"/> 
+	    	<target xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+	                        xmlns:impex="http://www.intershop.com/xml/ns/enfinity/7.1/bc_pricing/impex"
+	                        action="replace" type="custom" xpath="//soapenv:Body/impex:enfinity/impex:product-price-list/impex:display-name"/> 
+	</enrich>
+	<enrich>
+		   <source xpath="$ctx:description"/> 
+	    	<target xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+	                        xmlns:impex="http://www.intershop.com/xml/ns/enfinity/7.1/bc_pricing/impex"
+	                        action="replace" type="custom" xpath="//soapenv:Body/impex:enfinity/impex:product-price-list/impex:description"/> 
+	</enrich>
+
+	<property name="OUT_ONLY" scope="default" type="STRING" value="true"/>
   <property expression="$trp:FILE_NAME" name="filename" scope="default" type="STRING"/>
   <property
     expression="concat('pricelist_',get-property('SYSTEM_DATE', 'yyyyMMddHHmmss'),$trp:FILE_NAME)"
