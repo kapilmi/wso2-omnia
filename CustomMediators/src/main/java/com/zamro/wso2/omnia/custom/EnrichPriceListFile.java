@@ -21,6 +21,8 @@ public class EnrichPriceListFile extends AbstractMediator {
 			+ "  \n <display-name>DISPLAY_NAME</display-name>"
 			+ "  \n <description>DESCRIPTION</description>"
 			+ "  \n <enabled>ENABLED</enabled>"
+			+ "	 \n <valid-from/>"
+			+ "	 \n <valid-to/>"
 			+ "	 \n <priority>PRIORITY</priority>"
 			+ "	 \n <target-groups>"
 			+ "	 \n <customer-segments>"
@@ -29,7 +31,6 @@ public class EnrichPriceListFile extends AbstractMediator {
 
 	private static final String PRICELIST_FILE_END_DATA = "\n</enfinity>";
 
-	
 	private static final String PRICELIST_ID = "PRICELIST_ID";
 	private static final String PRICE_TYPE = "PRICE_TYPE";
 	private static final String DISPLAY_NAME = "DISPLAY_NAME";
@@ -38,10 +39,20 @@ public class EnrichPriceListFile extends AbstractMediator {
 	private static final String PRIORITY = "PRIORITY";
 	private static final String CUSTOMER_SEGMENT = "CUSTOMER_SEGMENT";
 	private static final String IMPORT_DOMAIN = "IMPORT_DOMAIN";
-
+	private static final String VALID_FROM = "VALID_FROM";
+	private static final String VALID_TO = "VALID_TO";
+	
 	private static final String ENRICH_START_DATA = "ENRICH_START_DATA";
 	private static final String ENRICH_END_DATA = "ENRICH_START_DATA";
 
+	private static final String VALID_FROM_EMPTY_TAG = "<valid-from/>";
+	private static final String VALID_TO_EMPTY_TAG = "<valid-to/>";
+	
+	private static final String VALID_FROM_START_TAG = "<valid-from>";
+	private static final String VALID_TO_START_TAG = "<valid-to>";
+	private static final String VALID_FROM_END_TAG = "</valid-from>";
+	private static final String VALID_TO_END_TAG = "</valid-to>";
+	
 	@Override
 	public boolean mediate(MessageContext context) {
 
@@ -52,6 +63,8 @@ public class EnrichPriceListFile extends AbstractMediator {
 		String displayName = (String) context.getProperty(DISPLAY_NAME);
 		String description = (String) context.getProperty(DESCRIPTION);
 		String enabled = (String) context.getProperty(ENABLED);
+		String validFrom = (String) context.getProperty(VALID_FROM);
+		String validTo = (String) context.getProperty(VALID_TO);
 		String priority = (String) context.getProperty(PRIORITY);
 		String customerSegment = (String) context.getProperty(CUSTOMER_SEGMENT);
 		String importDomain = (String) context.getProperty(IMPORT_DOMAIN);
@@ -63,10 +76,11 @@ public class EnrichPriceListFile extends AbstractMediator {
 
 		try {
 
-			File priceListFile = FileUtils.getFile(filePath+ File.separator +fileName);
+			File priceListFile = FileUtils.getFile(filePath + File.separator
+					+ fileName);
 
 			enrichFile(priceListFile, enrichStartData, enrichEndData,
-					priceListID, priceType, displayName, description, enabled,
+					priceListID, priceType, displayName, description, enabled,validFrom,validTo,
 					priority, customerSegment, importDomain);
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -74,33 +88,46 @@ public class EnrichPriceListFile extends AbstractMediator {
 		return true;
 	}
 
-
 	private void enrichFile(File priceListFile, String enrichStartData,
 			String enrichEndData, String priceListID, String priceType,
-			String displayName, String description, String enabled,
+			String displayName, String description, String enabled, String validFrom, String validTo,
 			String priority, String customerSegment, String importDomain)
 			throws IOException {
 
+		String enrichData = null;
 		Writer writer = new FileWriter(priceListFile,true);
 
 		if (enrichStartData != null && enrichStartData.equalsIgnoreCase("true")) {
 			
-			writer.write(EnrichPriceListFile.PRICELIST_FILE_START_DATA.replace(PRICELIST_ID, priceListID)
-							 .replace(PRICE_TYPE, priceType)
-							 .replace(DISPLAY_NAME, displayName)
-							 .replace(DESCRIPTION, description)
-							 .replace(ENABLED, enabled)
-							 .replace(PRIORITY, priority)
-							 .replace(CUSTOMER_SEGMENT, customerSegment)
-							 .replace(IMPORT_DOMAIN, importDomain));
+			enrichData =  EnrichPriceListFile.PRICELIST_FILE_START_DATA.replace(PRICELIST_ID, priceListID)
+								 .replace(PRICE_TYPE, priceType)
+								 .replace(DISPLAY_NAME, displayName)
+								 .replace(DESCRIPTION, description)
+								 .replace(ENABLED, enabled)
+								 .replace(PRIORITY, priority)
+								 .replace(CUSTOMER_SEGMENT, customerSegment)
+								 .replace(IMPORT_DOMAIN, importDomain);
 
-		} else {
-			writer.append(EnrichPriceListFile.PRICELIST_FILE_END_DATA);
+			if(validFrom!=null && validFrom.trim().length() > 0)
+			{
+				enrichData= enrichData.replace(VALID_FROM_EMPTY_TAG, VALID_FROM_START_TAG + validFrom + VALID_FROM_END_TAG);
+			}
+			
+
+			if(validTo!=null && validTo.trim().length() > 0)
+			{
+				enrichData = enrichData.replace(VALID_TO_EMPTY_TAG, VALID_TO_START_TAG + validTo + VALID_TO_END_TAG);
+			}
+			
+			
+			
+		} else
+		{
+			enrichData = EnrichPriceListFile.PRICELIST_FILE_END_DATA;
 		}
-
+		writer.write(enrichData);
 		writer.flush();
 		writer.close();
 
 	}
-
 }

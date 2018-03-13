@@ -3,56 +3,46 @@
  	 <property name="campaignName"  expression="//Products/Product[1]/campaign_name/text()"/>
       <property name="validFrom"  expression="//Products/Product[1]/start_date/text()" />
       <property name="validTo"  expression="//Products/Product[1]/end_date/text()"/>
-		
 	  <property expression="fn:concat('OmniaPromotionPriceList_',$ctx:campaignName)" name="priceListID" />
-	  <property expression="fn:concat('Omnia Promotion Price List for Campaign ',get-property('campaignName'))" name="displayName" />
-	  <property expression="fn:concat('Omnia suggested Promotion price list for Campaign ',get-property('campaignName'))" name="description"/>
+	  <property expression="fn:concat('Omnia Promotion Price List for Campaign ',get-property('campaignName'), ' (BE)')" name="displayName" />
+	  <property expression="fn:concat('Omnia suggested Promotion price list for Campaign ',get-property('campaignName'), ' (BE)' )" name="description"/>
 	
 	
-	  <smooks config-key="smooks-promotion-pricelist-config_DE">
+	<property name="FILE_PATH" value="impex/omnia/filedrop/ish_pricelists/Zamro-ZamroBE"/>
+	<property name="FILE_NAME" value="PromotionPriceList_BE.xml"/>
+	<property name="PRICELIST_ID" value="$ctx:priceListID"/>
+	<property name="PRICE_TYPE" value="ES_SALEPRICE"/>
+	<property name="DISPLAY_NAME" expression="$ctx:displayName"/>
+	<property name="DESCRIPTION" expression="$ctx:description"/>
+	<property name="ENABLED" value="true"/>
+	<property name="VALID_FROM" expression="$ctx:validFrom"/>
+	<property name="VALID_TO"  expression="$ctx:validTo"/>
+	<property name="PRIORITY" value="1"/>
+	<property name="CUSTOMER_SEGMENT" value="Everyone"/>
+	<property name="IMPORT_DOMAIN" value="Zamro-ZamroBE-Anonymous"/>
+	<property name="ENRICH_START_DATA" value="true"/>
+	
+	  <smooks config-key="smooks-promotion-pricelist-config_BE">
 	    	<input type="xml"/>
 	    	<output type="xml"/>
 	</smooks>	
-	<enrich>
-		   <source xpath="$ctx:priceListID"/> 
-	    	<target xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-	                        xmlns:impex="http://www.intershop.com/xml/ns/enfinity/7.1/bc_pricing/impex"
-	                        action="replace" type="custom" xpath="//soapenv:Body/impex:enfinity/impex:product-price-list/@id"/> 
-	</enrich>
-	<enrich>
-		   <source xpath="$ctx:validFrom"/> 
-	       <target xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-	                        xmlns:impex="http://www.intershop.com/xml/ns/enfinity/7.1/bc_pricing/impex"
-	                        action="replace" type="custom" xpath="//soapenv:Body/impex:enfinity/impex:product-price-list/impex:valid-from"/> 
-	</enrich>
-	<enrich>
-		   <source xpath="$ctx:validTo"/> 
-	    	<target xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-	                        xmlns:impex="http://www.intershop.com/xml/ns/enfinity/7.1/bc_pricing/impex"
-	                        action="replace" type="custom" xpath="//soapenv:Body/impex:enfinity/impex:product-price-list/impex:valid-to"/> 
-	</enrich>
-	<enrich>
-		   <source xpath="$ctx:displayName"/> 
-	    	<target xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-	                        xmlns:impex="http://www.intershop.com/xml/ns/enfinity/7.1/bc_pricing/impex"
-	                        action="replace" type="custom" xpath="//soapenv:Body/impex:enfinity/impex:product-price-list/impex:display-name"/> 
-	</enrich>
-	<enrich>
-		   <source xpath="$ctx:description"/> 
-	    	<target xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-	                        xmlns:impex="http://www.intershop.com/xml/ns/enfinity/7.1/bc_pricing/impex"
-	                        action="replace" type="custom" xpath="//soapenv:Body/impex:enfinity/impex:product-price-list/impex:description"/> 
-	</enrich>
 
-	<property name="OUT_ONLY" scope="default" type="STRING" value="true"/>
-  <property expression="$trp:FILE_NAME" name="filename" scope="default" type="STRING"/>
-  <property
-    expression="concat('pricelist_',get-property('SYSTEM_DATE', 'yyyyMMddHHmmss'),$trp:FILE_NAME)"
-    name="transport.vfs.ReplyFileName" scope="transport" type="STRING"/>
-  <property action="remove" name="ClientApiNonBlocking" scope="axis2"/>
-  <send>
-    <endpoint name="ICMPriceListEP">
-      <address trace="disable" uri="vfs:sftp://omnia-ACC:lIpW2lRV9QjT@37.97.184.105:22/filedrop/ish_pricelists/Zamro-ZamroBE/"/>
-    </endpoint>
-  </send>
+	<property name="ENRICH_START_DATA" value="false"/>
+	<class name="com.zamro.wso2.omnia.custom.EnrichPriceListFile"/>
+	
+	 <property expression="$trp:FILE_NAME" name="filename" scope="default"/>
+ 	 <property expression="concat('pricelist_',get-property('SYSTEM_DATE', 'yyyyMMddHHmmss'),$trp:FILE_NAME)"
+   	 name="NEW_FILE_NAME" />
+	<class name="com.zamro.wso2.omnia.custom.RenameFile"/>
+	
+	<property  name="FILE_NAME" expression="$ctx:NEW_FILE_NAME" />
+	<property  name="SFTP_USER" value="omnia-ACC" />
+	<property  name="SFTP_PASSWORD" value="lIpW2lRV9QjT" />
+	<property  name="SFTP_HOST" value="37.97.184.105" />
+	<property  name="SFTP_PORT" value="22" />
+	<property  name="SFTP_FILE_PATH" value="/filedrop/ish_pricelists/Zamro-ZamroBE" />
+	<property  name="SFTP_FILE_NAME" expression="$ctx:FILE_NAME" />
+	<class name="com.zamro.wso2.omnia.custom.UploadFileToSFTP"/>
+	
+	<class name="com.zamro.wso2.omnia.custom.DeleteFile"/>
 </sequence>
