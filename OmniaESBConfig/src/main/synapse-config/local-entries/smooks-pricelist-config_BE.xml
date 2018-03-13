@@ -8,28 +8,6 @@
     <resource-config selector="Products,Product">
       <resource>org.milyn.delivery.DomModelCreator</resource>
     </resource-config>
-    <ftl:freemarker applyOnElement="Products">
-      <ftl:template>
-        <!--<enfinity branch="enterprise" build="1.0.0.0.15.7.6.2"
-        family="enfinity" major="6" minor="1"
-        xmlns="http://www.intershop.com/xml/ns/enfinity/7.1/bc_pricing/impex"
-        xmlns:dt="http://www.intershop.com/xml/ns/enfinity/6.5/core/impex-dt"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.intershop.com/xml/ns/enfinity/7.1/bc_pricing/impex bc_pricing.xsd">
-        <product-price-list id="OmniaPriceList" priceType="ZMR_ListPrice">
-          <display-name>Omnia Price List</display-name>
-          <description>Omnia suggested price list</description>
-          <enabled>true</enabled>
-          <priority>1</priority>
-          <target-groups>
-            <customer-segments>
-              <customer-segment id="Everyone" repository-id="Zamro-ZamroBE-Anonymous"/>
-            </customer-segments>
-          </target-groups>
-	      <?TEMPLATE-SPLIT-PI?>
-     </product-price-list>
-      </enfinity>-->
-      </ftl:template>
-    </ftl:freemarker>
     <ftl:freemarker applyOnElement="Product">
       <ftl:template>
         <!--<product-price-list-entry sku='${.vars["Product"].ZamroID}'>
@@ -43,5 +21,10 @@
             </product-price-list-entry>-->
       </ftl:template>
     </ftl:freemarker>
+    <file:outputStream resourceName="outputStream" openOnElement="Product">
+		<file:fileNamePattern>PriceList_BE.xml</file:fileNamePattern>
+		<file:destinationDirectoryPattern>impex/omnia/filedrop/ish_pricelists/Zamro-ZamroBE</file:destinationDirectoryPattern>
+		<file:append>true</file:append>
+	</file:outputStream>
   </smooks-resource-list>
 </localEntry>

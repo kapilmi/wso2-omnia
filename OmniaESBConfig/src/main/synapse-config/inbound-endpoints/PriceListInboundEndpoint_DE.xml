@@ -10,13 +10,15 @@
     <parameter name="transport.vfs.LockReleaseSameNode">false</parameter>
     <parameter name="transport.vfs.AutoLockRelease">false</parameter>
     <parameter name="transport.vfs.ActionAfterFailure">MOVE</parameter>
-    <parameter name="transport.vfs.ActionAfterProcess">DELETE</parameter>
+    <parameter name="transport.vfs.ActionAfterProcess">MOVE</parameter>
     <parameter name="transport.vfs.FileURI">sftp://omnia-ACC:lIpW2lRV9QjT@37.97.184.105:22/filedrop/New_list_prices/ZamroDE?vfs.passive=true</parameter>
     <parameter name="transport.vfs.MoveAfterFailure">sftp://omnia-ACC:lIpW2lRV9QjT@37.97.184.105:22/filedrop/New_list_prices/ZamroDE/failure</parameter>
+    <parameter name="transport.vfs.MoveAfterProcess">sftp://omnia-ACC:lIpW2lRV9QjT@37.97.184.105:22/filedrop/New_list_prices/ZamroDE/processed</parameter>
     <parameter name="transport.vfs.DistributedLock">false</parameter>
     <parameter name="transport.vfs.FileNamePattern">.*\.xml</parameter>
     <parameter name="transport.vfs.FileProcessInterval">5000</parameter>
     <parameter name="transport.vfs.Locking">disable</parameter>
+    <parameter name="transport.vfs.FileProcessCount">1</parameter>
     <parameter name="transport.vfs.FileSortAttribute">Name</parameter>
     <parameter name="transport.vfs.FileSortAscending">true</parameter>
     <parameter name="transport.vfs.CreateFolder">true</parameter>
