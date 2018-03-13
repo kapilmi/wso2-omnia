@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sequence name="TierPriceListImportSequence_NL" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
-
 	<property name="FILE_PATH" value="impex/omnia/filedrop/ish_pricelists/Zamro-ZamroNL"/>
 	<property name="FILE_NAME" value="TierPriceList_NL.xml"/>
 	<property name="PRICELIST_ID" value="OmniaTierPriceList"/>
 	<property name="PRICE_TYPE" value="ZMR_ListPrice"/>
-	<property name="DISPLAY_NAME" value="Omnia Tier Price List"/>
-	<property name="DESCRIPTION" value="Omnia suggested Tier price list"/>
+	<property name="DISPLAY_NAME" value="Omnia Tier Price List (NL)"/>
+	<property name="DESCRIPTION" value="Omnia suggested Tier price list (NL)"/>
 	<property name="ENABLED" value="true"/>
 	<property name="PRIORITY" value="1"/>
 	<property name="CUSTOMER_SEGMENT" value="Everyone"/>

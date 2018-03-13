@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sequence name="TierPriceListImportSequence_BE" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
- 	
- 	 <property name="FILE_PATH" value="impex/omnia/filedrop/ish_pricelists/Zamro-ZamroBE"/>
+ 	<property name="FILE_PATH" value="impex/omnia/filedrop/ish_pricelists/Zamro-ZamroBE"/>
 	<property name="FILE_NAME" value="TierPriceList_BE.xml"/>
 	<property name="PRICELIST_ID" value="OmniaTierPriceList"/>
 	<property name="PRICE_TYPE" value="ZMR_ListPrice"/>
