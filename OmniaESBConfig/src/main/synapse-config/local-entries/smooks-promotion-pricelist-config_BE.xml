@@ -20,11 +20,14 @@
 	              </price-scale-table>
             </product-price-list-entry>-->
       </ftl:template>
+      <ftl:use>
+			<ftl:outputTo outputStreamResource="outputStream" />
+		</ftl:use>
     </ftl:freemarker>
-    <file:outputStream resourceName="outputStream" openOnElement="Product">
-		<file:fileNamePattern>PromotionPriceList_BE.xml</file:fileNamePattern>
-		<file:destinationDirectoryPattern>impex/omnia/filedrop/ish_pricelists/Zamro-ZamroBE</file:destinationDirectoryPattern>
-		<file:append>true</file:append>
-	</file:outputStream>
+    <file:outputStream openOnElement="Product" resourceName="outputStream">
+      <file:fileNamePattern>PromotionPriceList_BE.xml</file:fileNamePattern>
+      <file:destinationDirectoryPattern>impex/omnia/filedrop/ish_pricelists/Zamro-ZamroBE</file:destinationDirectoryPattern>
+      <file:append>true</file:append>
+    </file:outputStream>
   </smooks-resource-list>
 </localEntry>

@@ -20,20 +20,23 @@
 	<property name="PRIORITY" value="1"/>
 	<property name="CUSTOMER_SEGMENT" value="Everyone"/>
 	<property name="IMPORT_DOMAIN" value="Zamro-ZamroDE-Anonymous"/>
-	<property name="ENRICH_START_DATA" value="true"/>
 	
-	  <smooks config-key="smooks-promotion-pricelist-config_DE">
+	<property name="ENRICH_START_DATA" value="true"/>
+	<class name="com.zamro.wso2.omnia.custom.file.EnrichPriceListFile"/>
+	
+	<property name="DISABLE_SMOOKS_RESULT_PAYLOAD" value="true"/>
+	<smooks config-key="smooks-promotion-pricelist-config_DE">
 	    	<input type="xml"/>
 	    	<output type="xml"/>
 	</smooks>	
 
 	<property name="ENRICH_START_DATA" value="false"/>
-	<class name="com.zamro.wso2.omnia.custom.EnrichPriceListFile"/>
+	<class name="com.zamro.wso2.omnia.custom.file.EnrichPriceListFile"/>
 	
 	 <property expression="$trp:FILE_NAME" name="filename" scope="default"/>
  	 <property expression="concat('pricelist_',get-property('SYSTEM_DATE', 'yyyyMMddHHmmss'),$trp:FILE_NAME)"
    	 name="NEW_FILE_NAME" />
-	<class name="com.zamro.wso2.omnia.custom.RenameFile"/>
+	<class name="com.zamro.wso2.omnia.custom.file.RenameFile"/>
 	
 	<property  name="FILE_NAME" expression="$ctx:NEW_FILE_NAME" />
 	<property  name="SFTP_USER" value="omnia-ACC" />
@@ -42,8 +45,8 @@
 	<property  name="SFTP_PORT" value="22" />
 	<property  name="SFTP_FILE_PATH" value="/filedrop/ish_pricelists/Zamro-ZamroDE" />
 	<property  name="SFTP_FILE_NAME" expression="$ctx:FILE_NAME" />
-	<class name="com.zamro.wso2.omnia.custom.UploadFileToSFTP"/>
+	<class name="com.zamro.wso2.omnia.custom.file.UploadFileToSFTP"/>
 	
-	<class name="com.zamro.wso2.omnia.custom.DeleteFile"/>
+	<class name="com.zamro.wso2.omnia.custom.file.DeleteFile"/>
 	
 </sequence>

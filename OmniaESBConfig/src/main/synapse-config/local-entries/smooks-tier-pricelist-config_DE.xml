@@ -25,7 +25,7 @@
 		</ftl:use>
     </ftl:freemarker>
     <file:outputStream resourceName="outputStream" openOnElement="Product">
-		<file:fileNamePattern>TierPriceList_NL.xml</file:fileNamePattern>
+		<file:fileNamePattern>TierPriceList_DE.xml</file:fileNamePattern>
 		<file:destinationDirectoryPattern>impex/omnia/filedrop/ish_pricelists/Zamro-ZamroDE</file:destinationDirectoryPattern>
 		<file:append>true</file:append>
 	</file:outputStream>

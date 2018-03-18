@@ -1,4 +1,4 @@
-package com.zamro.wso2.omnia.custom.utils;
+package com.zamro.wso2.omnia.custom.file.utils;
 
 import java.io.File;
 import java.io.FileInputStream;

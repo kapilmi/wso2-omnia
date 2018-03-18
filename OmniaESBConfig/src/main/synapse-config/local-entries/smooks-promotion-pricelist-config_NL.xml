@@ -20,6 +20,9 @@
 	              </price-scale-table>
             </product-price-list-entry>-->
       </ftl:template>
+      <ftl:use>
+			<ftl:outputTo outputStreamResource="outputStream" />
+	  </ftl:use>
     </ftl:freemarker>
     <file:outputStream resourceName="outputStream" openOnElement="Product">
 		<file:fileNamePattern>PromotionPriceList_NL.xml</file:fileNamePattern>

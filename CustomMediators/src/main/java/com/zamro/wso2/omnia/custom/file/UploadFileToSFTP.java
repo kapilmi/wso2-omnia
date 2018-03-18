@@ -1,17 +1,17 @@
-package com.zamro.wso2.omnia.custom;
+package com.zamro.wso2.omnia.custom.file;
 
 import java.io.IOException;
+import java.net.SocketException;
 
 import org.apache.synapse.MessageContext;
 import org.apache.synapse.mediators.AbstractMediator;
 
 import com.jcraft.jsch.JSchException;
 import com.jcraft.jsch.SftpException;
-import com.zamro.wso2.omnia.custom.utils.FileUtils;
+import com.zamro.wso2.omnia.custom.file.utils.FileUtils;
 
 public class UploadFileToSFTP extends AbstractMediator {
 
-	@Override
 	public boolean mediate(MessageContext context) {
 		
 		String localFilePath = (String) context.getProperty(FileUtils.FILE_PATH);
@@ -29,7 +29,20 @@ public class UploadFileToSFTP extends AbstractMediator {
 			FileUtils.uploadFileToSFTP(localFilePath, localFileName, sftpHost,
 					sftpUser, sftpPassword, Integer.parseInt(sftpPort), sftpDirectory,
 					sftpFileName);
-		} catch (IOException | NumberFormatException | SftpException | JSchException e) {
+		} catch (NumberFormatException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SocketException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SftpException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JSchException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 

@@ -1,4 +1,4 @@
-package com.zamro.wso2.omnia.custom;
+package com.zamro.wso2.omnia.custom.file;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -8,7 +8,7 @@ import java.io.Writer;
 import org.apache.synapse.MessageContext;
 import org.apache.synapse.mediators.AbstractMediator;
 
-import com.zamro.wso2.omnia.custom.utils.FileUtils;
+import com.zamro.wso2.omnia.custom.file.utils.FileUtils;
 
 public class EnrichPriceListFile extends AbstractMediator {
 
@@ -17,19 +17,21 @@ public class EnrichPriceListFile extends AbstractMediator {
 			+ "  xmlns=\"http://www.intershop.com/xml/ns/enfinity/7.1/bc_pricing/impex\""
 			+ "  xmlns:dt=\"http://www.intershop.com/xml/ns/enfinity/6.5/core/impex-dt\""
 			+ "  xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://www.intershop.com/xml/ns/enfinity/7.1/bc_pricing/impex bc_pricing.xsd\">"
-			+ "  <product-price-list id=\"PRICELIST_ID\" priceType=\"PRICE_TYPE\">"
+			+ "  \n <product-price-list id=\"PRICELIST_ID\" priceType=\"PRICE_TYPE\">"
 			+ "  \n <display-name>DISPLAY_NAME</display-name>"
 			+ "  \n <description>DESCRIPTION</description>"
 			+ "  \n <enabled>ENABLED</enabled>"
 			+ "	 \n <valid-from/>"
 			+ "	 \n <valid-to/>"
 			+ "	 \n <priority>PRIORITY</priority>"
-			+ "	Â \n <target-groups>"
+			+ "	 \n <target-groups>"
 			+ "	 \n <customer-segments>"
 			+ "	 \n <customer-segment id=\"CUSTOMER_SEGMENT\" repository-id=\"IMPORT_DOMAIN\"/>"
-			+ "	 \n </customer-segments>" + "	 \n </target-groups>";
+			+ "	 \n </customer-segments>" 
+			+ "	 \n </target-groups>";
 
-	private static final String PRICELIST_FILE_END_DATA = "\n</enfinity>";
+	private static final String PRICELIST_FILE_END_DATA = "\n</product-price-list>"
+														+ "\n</enfinity>";
 
 	private static final String PRICELIST_ID = "PRICELIST_ID";
 	private static final String PRICE_TYPE = "PRICE_TYPE";
@@ -53,7 +55,6 @@ public class EnrichPriceListFile extends AbstractMediator {
 	private static final String VALID_FROM_END_TAG = "</valid-from>";
 	private static final String VALID_TO_END_TAG = "</valid-to>";
 	
-	@Override
 	public boolean mediate(MessageContext context) {
 
 		String filePath = (String) context.getProperty(FileUtils.FILE_PATH);
