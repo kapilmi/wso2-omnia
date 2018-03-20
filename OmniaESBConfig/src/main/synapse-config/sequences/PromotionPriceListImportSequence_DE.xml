@@ -8,7 +8,7 @@
 	  <property expression="fn:concat('Omnia suggested Promotion price list for Campaign ',get-property('campaignName'), ' (DE)' )" name="description"/>
 	
 	
-	<property name="FILE_PATH" value="impex/omnia/filedrop/ish_pricelists/Zamro-ZamroBE"/>
+	<property name="FILE_PATH" value="impex/omnia/filedrop/ish_pricelists/Zamro-ZamroDE"/>
 	<property name="FILE_NAME" value="PromotionPriceList_DE.xml"/>
 	<property name="PRICELIST_ID" value="$ctx:priceListID"/>
 	<property name="PRICE_TYPE" value="ES_SALEPRICE"/>

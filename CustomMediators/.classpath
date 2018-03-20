@@ -17,7 +17,7 @@
 	<classpathentry kind="var" path="ECLIPSE_WORKSPACE/.metadata/.plugins/org.wso2.developerstudio.eclipse.libraries/lib/jaxen-1.1.1.jar"/>
 	<classpathentry kind="var" path="ECLIPSE_WORKSPACE/.metadata/.plugins/org.wso2.developerstudio.eclipse.libraries/lib/jline-0.9.94.jar"/>
 	<classpathentry kind="var" path="ECLIPSE_WORKSPACE/.metadata/.plugins/org.wso2.developerstudio.eclipse.libraries/lib/jta-1.1.jar"/>
-	<classpathentry kind="var" path="ECLIPSE_WORKSPACE/.metadata/.plugins/org.wso2.developerstudio.eclipse.libraries/lib/milyn-smooks-all-1.4.jar" sourcepath="SOURCE_ATTACHER/milyn-smooks-all-1.4-sources.jar"/>
+	<classpathentry kind="var" path="ECLIPSE_WORKSPACE/.metadata/.plugins/org.wso2.developerstudio.eclipse.libraries/lib/milyn-smooks-all-1.4.jar" sourcepath="SOURCE_ATTACHER/milyn-smooks-all-1.4-sources-1521541559574.jar"/>
 	<classpathentry kind="var" path="ECLIPSE_WORKSPACE/.metadata/.plugins/org.wso2.developerstudio.eclipse.libraries/lib/mvel2-2.0.17.jar"/>
 	<classpathentry kind="var" path="ECLIPSE_WORKSPACE/.metadata/.plugins/org.wso2.developerstudio.eclipse.libraries/lib/ognl-2.7.3.jar"/>
 	<classpathentry kind="var" path="ECLIPSE_WORKSPACE/.metadata/.plugins/org.wso2.developerstudio.eclipse.libraries/lib/opencsv-1.8.jar"/>
@@ -68,7 +68,7 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5">
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>

@@ -5,6 +5,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.apache.synapse.MessageContext;
 import org.apache.synapse.mediators.AbstractMediator;
 
@@ -12,6 +14,8 @@ import com.zamro.wso2.omnia.custom.file.utils.FileUtils;
 
 public class EnrichPriceListFile extends AbstractMediator {
 
+	Log log = LogFactory.getLog(EnrichPriceListFile.class);
+	
 	private static final String PRICELIST_FILE_START_DATA = "<enfinity branch=\"enterprise\" build=\"1.0.0.0.15.7.6.2\""
 			+ "  family=\"enfinity\" major=\"6\" minor=\"1\""
 			+ "  xmlns=\"http://www.intershop.com/xml/ns/enfinity/7.1/bc_pricing/impex\""
@@ -72,7 +76,6 @@ public class EnrichPriceListFile extends AbstractMediator {
 
 		String enrichStartData = (String) context
 				.getProperty(ENRICH_START_DATA);
-		;
 		String enrichEndData = (String) context.getProperty(ENRICH_END_DATA);
 
 		try {
@@ -84,7 +87,7 @@ public class EnrichPriceListFile extends AbstractMediator {
 					priceListID, priceType, displayName, description, enabled,validFrom,validTo,
 					priority, customerSegment, importDomain);
 		} catch (IOException e) {
-			e.printStackTrace();
+			log.error("Error in enriching pricelist file ", e);
 		}
 		return true;
 	}
@@ -99,6 +102,8 @@ public class EnrichPriceListFile extends AbstractMediator {
 		Writer writer = new FileWriter(priceListFile,true);
 
 		if (enrichStartData != null && enrichStartData.equalsIgnoreCase("true")) {
+			
+			log.info("Enriching price list file for Start tags ");
 			
 			enrichData =  EnrichPriceListFile.PRICELIST_FILE_START_DATA.replace(PRICELIST_ID, priceListID)
 								 .replace(PRICE_TYPE, priceType)
@@ -124,6 +129,8 @@ public class EnrichPriceListFile extends AbstractMediator {
 			
 		} else
 		{
+			log.info("Enriching price list file for End tags ");
+
 			enrichData = EnrichPriceListFile.PRICELIST_FILE_END_DATA;
 		}
 		writer.write(enrichData);
