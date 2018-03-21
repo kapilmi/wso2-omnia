@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="FullTierPriceListImportSequence_NL" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+	<property name="FILE_PATH" value="impex/omnia/filedrop/ish_pricelists/Zamro-ZamroNL"/>
+	<property name="FILE_NAME" value="FullTierPriceList_NL.xml"/>
+	<property name="PRICELIST_ID" value="OmniaTierPriceList_New"/>
+	<property name="PRICE_TYPE" value="ZMR_ListPrice"/>
+	<property name="DISPLAY_NAME" value="Omnia Tier Price List (NL)"/>
+	<property name="DESCRIPTION" value="Omnia suggested Tier price list (NL)"/>
+	<property name="ENABLED" value="true"/>
+	<property name="PRIORITY" value="1"/>
+	<property name="CUSTOMER_SEGMENT" value="Everyone"/>
+	<property name="IMPORT_DOMAIN" value="Zamro-ZamroNL-Anonymous"/>
+	
+	<property name="ENRICH_START_DATA" value="true"/>
+	<class name="com.zamro.wso2.omnia.custom.file.EnrichPriceListFile"/>
+	
+	<property name="DISABLE_SMOOKS_RESULT_PAYLOAD" value="true"/>
+	<smooks config-key="smooks-full-tier-pricelist-config_NL">
+	    <input type="xml"/>
+	    <output type="xml"/>
+	  </smooks>
+	  
+	<property name="ENRICH_START_DATA" value="false"/>
+	<class name="com.zamro.wso2.omnia.custom.file.EnrichPriceListFile"/>
+	
+	 <property expression="$trp:FILE_NAME" name="filename" scope="default"/>
+ 	 <property expression="concat('pricelist_',get-property('SYSTEM_DATE', 'yyyyMMddHHmmss'),$trp:FILE_NAME)"
+   	 name="NEW_FILE_NAME" />
+	<class name="com.zamro.wso2.omnia.custom.file.RenameFile"/>
+	
+	<property  name="FILE_NAME" expression="$ctx:NEW_FILE_NAME" />
+	<property  name="SFTP_USER" value="omnia-ACC" />
+	<property  name="SFTP_PASSWORD" value="lIpW2lRV9QjT" />
+	<property  name="SFTP_HOST" value="37.97.184.105" />
+	<property  name="SFTP_PORT" value="22" />
+	<property  name="SFTP_FILE_PATH" value="/filedrop/ish_pricelists/Zamro-ZamroNL" />
+	<property  name="SFTP_FILE_NAME" expression="$ctx:FILE_NAME" />
+	<class name="com.zamro.wso2.omnia.custom.file.UploadFileToSFTP"/>
+	
+	<class name="com.zamro.wso2.omnia.custom.file.DeleteFile"/>
+	
+</sequence>

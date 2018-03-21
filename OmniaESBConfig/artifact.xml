@@ -35,6 +35,15 @@
     <artifact name="TierPriceListInboundEndpoint_DE" groupId="com.zamro.wso2.omnia.inbound-endpoint" version="1.0.0" type="synapse/inbound-endpoint" serverRole="EnterpriseServiceBus">
         <file>src/main/synapse-config/inbound-endpoints/TierPriceListInboundEndpoint_DE.xml</file>
     </artifact>
+    <artifact name="FullTierPriceListInboundEndpoint_NL" groupId="com.zamro.wso2.omnia.inbound-endpoint" version="1.0.0" type="synapse/inbound-endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/inbound-endpoints/FullTierPriceListInboundEndpoint_NL.xml</file>
+    </artifact>
+    <artifact name="FullTierPriceListInboundEndpoint_BE" groupId="com.zamro.wso2.omnia.inbound-endpoint" version="1.0.0" type="synapse/inbound-endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/inbound-endpoints/FullTierPriceListInboundEndpoint_BE.xml</file>
+    </artifact>
+    <artifact name="FullTierPriceListInboundEndpoint_DE" groupId="com.zamro.wso2.omnia.inbound-endpoint" version="1.0.0" type="synapse/inbound-endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/inbound-endpoints/FullTierPriceListInboundEndpoint_DE.xml</file>
+    </artifact>
     <artifact name="TierPriceListImportSequence_NL" groupId="com.zamro.wso2.omnia.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
         <file>src/main/synapse-config/sequences/TierPriceListImportSequence_NL.xml</file>
     </artifact>
@@ -44,6 +53,15 @@
     <artifact name="TierPriceListImportSequence_BE" groupId="com.zamro.wso2.omnia.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
         <file>src/main/synapse-config/sequences/TierPriceListImportSequence_BE.xml</file>
     </artifact>
+    <artifact name="FullTierPriceListImportSequence_NL" groupId="com.zamro.wso2.omnia.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/FullTierPriceListImportSequence_NL.xml</file>
+    </artifact>
+    <artifact name="FullTierPriceListImportSequence_DE" groupId="com.zamro.wso2.omnia.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/FullTierPriceListImportSequence_DE.xml</file>
+    </artifact>
+    <artifact name="FullTierPriceListImportSequence_BE" groupId="com.zamro.wso2.omnia.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/FullTierPriceListImportSequence_BE.xml</file>
+    </artifact>
     <artifact name="smooks-tier-pricelist-config_BE" groupId="com.zamro.wso2.omnia.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
         <file>src/main/synapse-config/local-entries/smooks-tier-pricelist-config_BE.xml</file>
     </artifact>
@@ -52,6 +70,15 @@
     </artifact>
     <artifact name="smooks-tier-pricelist-config_NL" groupId="com.zamro.wso2.omnia.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
         <file>src/main/synapse-config/local-entries/smooks-tier-pricelist-config_NL.xml</file>
+    </artifact>
+	<artifact name="smooks-full-tier-pricelist-config_BE" groupId="com.zamro.wso2.omnia.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/smooks-full-tier-pricelist-config_BE.xml</file>
+    </artifact>
+    <artifact name="smooks-full-tier-pricelist-config_DE" groupId="com.zamro.wso2.omnia.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/smooks-full-tier-pricelist-config_DE.xml</file>
+    </artifact>
+    <artifact name="smooks-full-tier-pricelist-config_NL" groupId="com.zamro.wso2.omnia.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/smooks-full-tier-pricelist-config_NL.xml</file>
     </artifact>
     <artifact name="PromotionPriceListInboundEndpoint_NL" groupId="com.zamro.wso2.omnia.inbound-endpoint" version="1.0.0" type="synapse/inbound-endpoint" serverRole="EnterpriseServiceBus">
         <file>src/main/synapse-config/inbound-endpoints/PromotionPriceListInboundEndpoint_NL.xml</file>
