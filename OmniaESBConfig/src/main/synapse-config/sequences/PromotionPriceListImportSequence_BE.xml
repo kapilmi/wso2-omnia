@@ -11,7 +11,7 @@
 	<property name="FILE_PATH" value="impex/omnia/filedrop/ish_pricelists/Zamro-ZamroBE"/>
 	<property name="FILE_NAME" value="PromotionPriceList_BE.xml"/>
 	<property name="PRICELIST_ID" value="$ctx:priceListID"/>
-	<property name="PRICE_TYPE" value="ES_SALEPRICE"/>
+	<property name="PRICE_TYPE" value="ES_SalePrice"/>
 	<property name="DISPLAY_NAME" expression="$ctx:displayName"/>
 	<property name="DESCRIPTION" expression="$ctx:description"/>
 	<property name="ENABLED" value="true"/>
