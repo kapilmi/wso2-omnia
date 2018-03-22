@@ -23,10 +23,10 @@
 	<property name="ENRICH_START_DATA" value="false"/>
 	<class name="com.zamro.wso2.omnia.custom.file.EnrichPriceListFile"/>
 	
-	 <property expression="$trp:FILE_NAME" name="filename" scope="default"/>
- 	 <property expression="concat('pricelist_',get-property('SYSTEM_DATE', 'yyyyMMddHHmmss'),$trp:FILE_NAME,'_update')"
+	<property expression="$trp:FILE_NAME" name="filename" scope="default"/>
+ 	<property expression="concat('pricelist_',get-property('SYSTEM_DATE', 'yyyyMMddHHmmss'),'_update.xml')"
    	 name="NEW_FILE_NAME" />
-	<class name="com.zamro.wso2.omnia.custom.file.RenameFile"/>
+   	 <class name="com.zamro.wso2.omnia.custom.file.RenameFile"/>
 	
 	<property  name="FILE_NAME" expression="$ctx:NEW_FILE_NAME" />
 	<property  name="SFTP_USER" value="omnia-ACC" />
