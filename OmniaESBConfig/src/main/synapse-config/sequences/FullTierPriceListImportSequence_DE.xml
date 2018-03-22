@@ -6,7 +6,7 @@
 	<property name="PRICE_TYPE" value="ZMR_ListPrice"/>
 	<property name="DISPLAY_NAME" value="Omnia Tier Price List (DE)"/>
 	<property name="DESCRIPTION" value="Omnia suggested Tier price list (DE)"/>
-	<property name="ENABLED" value="true"/>
+	<property name="ENABLED" value="false"/>
 	<property name="PRIORITY" value="1"/>
 	<property name="CUSTOMER_SEGMENT" value="Everyone"/>
 	<property name="IMPORT_DOMAIN" value="Zamro-ZamroDE-Anonymous"/>
