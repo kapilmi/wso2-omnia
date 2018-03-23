@@ -37,9 +37,10 @@ public class FileUtils {
 
 	}
 
-	public static void renameFile(String filePath,String fileName, String newFileName) {
+	public static void renameFile(String filePath, String fileName,
+			String newFileName) {
 
-		File file = getFile(filePath + File.separator +  fileName);
+		File file = getFile(filePath + File.separator + fileName);
 		file.renameTo(new File(filePath + File.separator + newFileName));
 
 	}
@@ -47,34 +48,34 @@ public class FileUtils {
 	public static void uploadFileToSFTP(String localFilePath,
 			String localFileName, String sftpServer, String sftpUser,
 			String sftpPassword, int sftpPort, String sftpDirectory,
-			String sftpFileName) throws SocketException, IOException, SftpException, JSchException {
+			String sftpFileName) throws SocketException, IOException,
+			SftpException, JSchException {
 
 		File localFile = getFile(localFilePath + File.separator + localFileName);
 
 		InputStream inputStream = new FileInputStream(localFile);
 
-		
 		JSch jsch = new JSch();
-	    Session session = jsch.getSession( sftpUser, sftpServer, sftpPort );
-	    session.setPassword(sftpPassword );
-	    java.util.Properties config = new java.util.Properties();
-        config.put("StrictHostKeyChecking", "no");
-        session.setConfig(config);
-	    session.connect();
-	    Channel channel = session.openChannel( "sftp" );
-	    ChannelSftp sftp = ( ChannelSftp ) channel;
-	    sftp.connect( );
-	    sftp.cd(sftpDirectory);
-	    sftp.put(inputStream, sftpFileName);
-	    channel.disconnect();
+		Session session = jsch.getSession(sftpUser, sftpServer, sftpPort);
+		session.setPassword(sftpPassword);
+		java.util.Properties config = new java.util.Properties();
+		config.put("StrictHostKeyChecking", "no");
+		session.setConfig(config);
+		session.connect();
+		Channel channel = session.openChannel("sftp");
+		ChannelSftp sftp = (ChannelSftp) channel;
+		sftp.connect();
+		sftp.cd(sftpDirectory);
+		sftp.put(inputStream, sftpFileName);
+		channel.disconnect();
 		inputStream.close();
 
 		return;
 
 	}
 
-	public static void delete(String filePath,String fileName) {
-		
+	public static void delete(String filePath, String fileName) {
+
 		File localFile = getFile(filePath + File.separator + fileName);
 		localFile.delete();
 	}

@@ -10,7 +10,7 @@
 	
 	<property name="FILE_PATH" value="impex/omnia/filedrop/ish_pricelists/Zamro-ZamroBE"/>
 	<property name="FILE_NAME" value="PromotionPriceList_BE.xml"/>
-	<property name="PRICELIST_ID" value="$ctx:priceListID"/>
+	<property name="PRICELIST_ID" expression="$ctx:priceListID"/>
 	<property name="PRICE_TYPE" value="ES_SalePrice"/>
 	<property name="DISPLAY_NAME" expression="$ctx:displayName"/>
 	<property name="DESCRIPTION" expression="$ctx:description"/>
@@ -20,6 +20,8 @@
 	<property name="PRIORITY" value="1"/>
 	<property name="CUSTOMER_SEGMENT" value="Everyone"/>
 	<property name="IMPORT_DOMAIN" value="Zamro-ZamroBE-Anonymous"/>
+	
+	<class name="com.zamro.wso2.omnia.custom.file.DeleteFile"/>
 	
 	<property name="ENRICH_START_DATA" value="true"/>
 	<class name="com.zamro.wso2.omnia.custom.file.EnrichPriceListFile"/>
@@ -34,7 +36,7 @@
 	<class name="com.zamro.wso2.omnia.custom.file.EnrichPriceListFile"/>
 	
 	 <property expression="$trp:FILE_NAME" name="filename" scope="default"/>
- 	 <property expression="concat('pricelist_',get-property('SYSTEM_DATE', 'yyyyMMddHHmmss'),'_update.xml')"
+ 	  <property expression="concat('pricelist_',get-property('filename'),'_update.xml')"
    	 name="NEW_FILE_NAME" />
 	<class name="com.zamro.wso2.omnia.custom.file.RenameFile"/>
 	
