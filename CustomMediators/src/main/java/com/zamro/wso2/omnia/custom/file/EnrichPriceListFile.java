@@ -118,14 +118,17 @@ public class EnrichPriceListFile extends AbstractMediator {
 			{
 				enrichData= enrichData.replace(VALID_FROM_EMPTY_TAG, VALID_FROM_START_TAG + validFrom + VALID_FROM_END_TAG);
 			}
-			
+			else{
+				enrichData= enrichData.replace(VALID_FROM_EMPTY_TAG, "");
+			}
 
 			if(validTo!=null && validTo.trim().length() > 0)
 			{
 				enrichData = enrichData.replace(VALID_TO_EMPTY_TAG, VALID_TO_START_TAG + validTo + VALID_TO_END_TAG);
 			}
-			
-			
+			else{
+				enrichData= enrichData.replace(VALID_TO_EMPTY_TAG, "");
+			}
 			
 		} else
 		{
