@@ -17,10 +17,10 @@ public class EnrichPriceListFile extends AbstractMediator {
 	Log log = LogFactory.getLog(EnrichPriceListFile.class);
 	
 	private static final String PRICELIST_FILE_START_DATA = "<enfinity branch=\"enterprise\" build=\"1.0.0.0.15.7.6.2\""
-			+ "family=\"enfinity\" major=\"6\" minor=\"1\""
-			+ "xmlns=\"http://www.intershop.com/xml/ns/enfinity/7.1/bc_pricing/impex\""
-			+ "xmlns:dt=\"http://www.intershop.com/xml/ns/enfinity/6.5/core/impex-dt\""
-			+ "xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://www.intershop.com/xml/ns/enfinity/7.1/bc_pricing/impex bc_pricing.xsd\">"
+			+ " family=\"enfinity\" major=\"6\" minor=\"1\""
+			+ " xmlns=\"http://www.intershop.com/xml/ns/enfinity/7.1/bc_pricing/impex\""
+			+ " xmlns:dt=\"http://www.intershop.com/xml/ns/enfinity/6.5/core/impex-dt\""
+			+ " xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://www.intershop.com/xml/ns/enfinity/7.1/bc_pricing/impex bc_pricing.xsd\">"
 			+ "\n<product-price-list id=\"PRICELIST_ID\" priceType=\"PRICE_TYPE\">"
 			+ "\n<display-name>DISPLAY_NAME</display-name>"
 			+ "\n<description>DESCRIPTION</description>"
