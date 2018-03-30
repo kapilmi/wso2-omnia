@@ -2,7 +2,7 @@
 <sequence name="PriceListImportSequence_BE" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
  	<property name="FILE_PATH" value="impex/omnia/filedrop/ish_pricelists/Zamro-ZamroBE"/>
 	<property name="FILE_NAME" value="PriceList_BE.xml"/>
-	<property name="PRICELIST_ID" value="OmniaTierPriceList"/>
+	<property name="PRICELIST_ID" value="OmniaPriceList"/>
 	<property name="PRICE_TYPE" value="ZMR_ListPrice"/>
 	<property name="DISPLAY_NAME" value="Omnia Price List (BE)"/>
 	<property name="DESCRIPTION" value="Omnia suggested price list (BE)"/>
