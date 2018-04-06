@@ -32,8 +32,8 @@
 	<class name="com.zamro.wso2.omnia.custom.file.RenameFile"/>
 	
 	<property  name="FILE_NAME" expression="$ctx:NEW_FILE_NAME" />
-	<property  name="SFTP_USER" value="omnia-ACC" />
-	<property  name="SFTP_PASSWORD" value="lIpW2lRV9QjT" />
+	<property  name="SFTP_USER" value="omnia" />
+	<property  name="SFTP_PASSWORD" value="Gl1vGAM2IB38" />
 	<property  name="SFTP_HOST" value="37.97.184.105" />
 	<property  name="SFTP_PORT" value="22" />
 	<property  name="SFTP_FILE_PATH" value="/filedrop/ish_pricelists/Zamro-ZamroBE" />

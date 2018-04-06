@@ -11,9 +11,9 @@
     <parameter name="transport.vfs.AutoLockRelease">false</parameter>
     <parameter name="transport.vfs.ActionAfterFailure">MOVE</parameter>
     <parameter name="transport.vfs.ActionAfterProcess">MOVE</parameter>
-    <parameter name="transport.vfs.FileURI">sftp://omnia-ACC:lIpW2lRV9QjT@37.97.184.105:22/filedrop/New_list_prices/ZamroBE?vfs.passive=true</parameter>
-    <parameter name="transport.vfs.MoveAfterFailure">sftp://omnia-ACC:lIpW2lRV9QjT@37.97.184.105:22/filedrop/New_list_prices/ZamroBE/failure</parameter>
-    <parameter name="transport.vfs.MoveAfterProcess">sftp://omnia-ACC:lIpW2lRV9QjT@37.97.184.105:22/filedrop/New_list_prices/ZamroBE/processed</parameter>
+    <parameter name="transport.vfs.FileURI">sftp://omnia:Gl1vGAM2IB38@37.97.184.105:22/filedrop/New_list_prices/ZamroBE?vfs.passive=true</parameter>
+    <parameter name="transport.vfs.MoveAfterFailure">sftp://omnia:Gl1vGAM2IB38@37.97.184.105:22/filedrop/New_list_prices/ZamroBE/failure</parameter>
+    <parameter name="transport.vfs.MoveAfterProcess">sftp://omnia:Gl1vGAM2IB38@37.97.184.105:22/filedrop/New_list_prices/ZamroBE/processed</parameter>
     <parameter name="transport.vfs.DistributedLock">false</parameter>
     <parameter name="transport.vfs.FileNamePattern">.*\.xml</parameter>
     <parameter name="transport.vfs.FileProcessInterval">5000</parameter>
